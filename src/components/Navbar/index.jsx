@@ -23,6 +23,10 @@ export default class NavbarComp extends Component {
         
     }
 
+    getProfile = () => {
+        window.location.href = "https://browser.blockstack.org/profiles"
+    }
+
     render() {
         const {userSession} = this.props
         const isSignedIn = userSession.isUserSignedIn()
@@ -45,7 +49,7 @@ export default class NavbarComp extends Component {
                                 <Navbar.Item>
                                     Previous Calendars
                                 </Navbar.Item>
-                                <Navbar.Item>
+                                <Navbar.Item onClick={this.getProfile}>
                                     My Profile
                                 </Navbar.Item>
                                 <Navbar.Item onClick={this.handleSignOut}>
